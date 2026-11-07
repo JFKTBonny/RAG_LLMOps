@@ -1,0 +1,104 @@
+SDLC AND DEVOPS HANDBOOK — TECHCORP ENGINEERING 2024
+
+AGILE METHODOLOGY
+The engineering team follows Agile Scrum methodology with two week sprint cycles.
+Sprint planning happens every Monday at 10am and should not exceed 2 hours.
+Daily standups are held at 9am and must be completed within 15 minutes.
+Each standup covers what was done yesterday, what is planned today, and any blockers.
+Sprint retrospectives are held on the last Friday of each sprint.
+Sprint reviews are conducted with stakeholders before the retrospective.
+The product owner is responsible for maintaining and prioritizing the product backlog.
+Story points are used to estimate task complexity using the Fibonacci sequence.
+A sprint velocity is calculated as the average story points completed per sprint.
+Sprints cannot be extended — incomplete tasks are moved to the next sprint backlog.
+
+REQUIREMENTS AND PLANNING
+All features must have a clearly defined user story before development begins.
+User stories follow the format: As a user I want to so that.
+Acceptance criteria must be defined for every user story before sprint planning.
+Technical tasks must include effort estimates and dependency identification.
+Architecture decision records must be created for any major technical decisions.
+All requirements must be reviewed and approved by the product owner before development.
+A definition of ready ensures stories are prepared before entering a sprint.
+A definition of done ensures all quality gates are met before marking work complete.
+
+GIT AND VERSION CONTROL
+The team uses GitHub for version control following the GitFlow branching strategy.
+The main branch contains production ready code and is protected from direct pushes.
+The develop branch is the integration branch for completed features.
+Feature branches must be created from develop and named feature slash ticket number slash description.
+Hotfix branches are created from main for critical production bug fixes.
+All branches must be deleted after successful merge to keep the repository clean.
+Commit messages must follow conventional commits format with type colon description.
+Valid commit types are feat, fix, docs, style, refactor, test, and chore.
+Each commit should represent one logical change and must not mix unrelated changes.
+
+CODE REVIEW PROCESS
+All code must be reviewed by at least two engineers before merging to develop.
+Code reviews must be completed within 24 hours of pull request submission.
+Reviewers must check for correctness, security, performance, and code style.
+Pull requests must include a description of changes and link to the related ticket.
+Automated tests must pass before a pull request can be approved for review.
+The author must not approve their own pull request under any circumstances.
+Comments on pull requests must be resolved before the pull request can be merged.
+Large pull requests exceeding 400 lines of code must be broken into smaller ones.
+All new code must maintain minimum 80 percent test coverage to be approved.
+
+TESTING STANDARDS
+Unit tests must be written for all business logic and utility functions.
+Integration tests must cover all API endpoints and database interactions.
+End to end tests must cover all critical user journeys in the application.
+Test driven development is encouraged where developers write tests before code.
+All tests must be independent and must not rely on the order of execution.
+Mock objects must be used to isolate units under test from external dependencies.
+Performance tests must be run before any major release to identify bottlenecks.
+Security testing including SAST and DAST must be completed before production deployment.
+Bug fixes must include a regression test to prevent the same bug from recurring.
+
+CI CD PIPELINE
+The CI CD pipeline is managed using GitHub Actions and runs on every pull request.
+The pipeline includes stages for linting, unit tests, integration tests, and build.
+A failed pipeline must be fixed before any merge to develop or main is allowed.
+Docker images are built and pushed to the container registry on successful builds.
+Staging deployment happens automatically after successful merge to develop branch.
+Production deployment requires manual approval from at least one senior engineer.
+Deployment to production happens only during the approved deployment window.
+The approved deployment window is Tuesday and Thursday between 2pm and 4pm.
+Rollback procedures must be tested and documented before any major release.
+Blue green deployment strategy is used to minimize downtime during releases.
+
+INCIDENT MANAGEMENT
+All production incidents must be reported immediately in the incidents Slack channel.
+Incidents are classified as P1 critical, P2 high, P3 medium, and P4 low priority.
+P1 incidents require immediate response within 15 minutes around the clock.
+P2 incidents must be acknowledged within 1 hour during business hours.
+A war room is created for P1 and P2 incidents to coordinate the response team.
+Post mortem reviews must be completed within 48 hours of resolving a P1 incident.
+Post mortems must be blameless and focus on process improvements not individuals.
+All incidents must be documented in the incident management system with root cause.
+On call rotation is managed using PagerDuty with weekly rotation among senior engineers.
+Runbooks must be created and maintained for all known recurring incidents.
+
+CODE QUALITY AND STANDARDS
+All code must follow the team style guide enforced by automated linters.
+Python code must comply with PEP8 standards and be checked with flake8.
+JavaScript code must comply with the ESLint configuration in the repository.
+Code complexity must be kept below a cyclomatic complexity score of 10.
+Dead code and unused imports must be removed before submitting a pull request.
+All public functions and classes must include docstrings explaining their purpose.
+Magic numbers and hardcoded strings must be replaced with named constants.
+Database queries must use parameterized queries to prevent SQL injection attacks.
+Secrets and API keys must never be committed to the repository under any circumstances.
+Dependency versions must be pinned in requirements files to ensure reproducible builds.
+
+RELEASE MANAGEMENT
+Releases follow semantic versioning with major minor and patch version numbers.
+Major versions indicate breaking changes that require migration steps.
+Minor versions indicate new features that are backward compatible.
+Patch versions indicate bug fixes that do not affect the public interface.
+A release candidate must be deployed to staging for at least 48 hours before production.
+Release notes must document all changes, bug fixes, and migration steps.
+Database migrations must be backward compatible to support zero downtime deployments.
+Feature flags are used to gradually roll out new features to subsets of users.
+A go no go meeting is held one hour before each production deployment.
+All releases must be tagged in GitHub with the version number and release notes.

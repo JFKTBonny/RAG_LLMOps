@@ -1,0 +1,14 @@
+# Core dependencies for running the RAG examples
+# Install with: pip install -r requirements.txt
+
+sentence-transformers>=5.0.0
+chromadb>=1.0.0
+rank-bm25>=0.2.2
+numpy>=1.26.0
+pypdf>=5.0.0
+ollama>=0.4.0
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+transformers>=4.45.0
+torch>=2.5.0

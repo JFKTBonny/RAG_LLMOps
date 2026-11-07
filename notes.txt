@@ -1,0 +1,104 @@
+RAG stands for Retrieval-Augmented Generation.
+
+It is a technique that combines a retrieval system with a generative language model.
+
+Purpose:
+- Answer questions using external knowledge.
+- Reduce hallucinations by grounding responses in source documents.
+- Work with private, domain-specific, or frequently changing information.
+- Let a model answer questions it was not explicitly trained on.
+
+How it works:
+- A user asks a question.
+- The system searches relevant documents or text chunks.
+- The most relevant chunks are retrieved.
+- Those chunks are added to the model prompt as context.
+- The model generates an answer based on that context.
+
+Typical RAG pipeline steps:
+1. Data ingestion
+   - Collect documents from files, PDFs, websites, databases, or APIs.
+   - Clean and normalize the text.
+
+2. Chunking
+   - Split large documents into smaller sections called chunks.
+   - Good chunks preserve meaning and context.
+   - Common methods: fixed-size chunks, paragraph chunks, and sliding-window chunks.
+
+3. Embedding generation
+   - Convert chunks into vector embeddings using a sentence embedding model.
+   - This captures semantic meaning in numeric form.
+
+4. Vector storage
+   - Save embeddings in a vector database or index.
+   - This allows fast similarity search.
+
+5. Query processing
+   - Convert the user question into an embedding.
+   - Optionally rewrite, expand, or refine the query to improve retrieval.
+
+6. Retrieval
+   - Search the vector store for the most relevant chunks.
+   - Common strategies: dense retrieval, sparse retrieval, and hybrid retrieval.
+
+7. Reranking
+   - Reorder retrieved chunks by relevance.
+   - This improves precision and selects the best context for the model.
+
+8. Prompt assembly
+   - Combine the best chunks with the user question.
+   - Build a compact prompt grounded in the retrieved evidence.
+
+9. Generation
+   - Send the prompt to a language model.
+   - The model answers using only the retrieved context.
+
+10. Evaluation
+   - Measure answer faithfulness, retrieval quality, and relevance.
+   - This helps detect hallucinations and weak retrieval.
+
+11. Monitoring and improvement
+   - Track latency, cost, token usage, and answer quality.
+   - Tune prompts, chunking, and retrieval settings over time.
+
+Important idea:
+RAG does not replace the model; it gives the model access to the right information at the right time.
+
+Simple mental model:
+- Retrieval finds the evidence.
+- Generation uses the evidence to answer.
+- The result is usually more accurate and more specific than a standalone model response.
+
+Example:
+If someone asks, "What is the onboarding policy?", the system retrieves relevant passages from a handbook and the model answers based on those passages.
+
+Mini graphic:
+
+User question
+      |
+      v
+Query -> Retrieve relevant chunks -> Rerank -> Build prompt -> Generate answer
+                     ^                                |
+                     |                                |
+                 Vector store / documents ------------
+
+This pattern is commonly used in enterprise knowledge assistants, document Q&A, support bots, and internal search systems.
+
+Local AI stack:
+- Ollama: runs open-source LLMs locally.
+- llama3.2: a local model used for generation.
+- ChromaDB: stores and searches vector embeddings.
+- sentence-transformers: converts text into embeddings.
+
+Useful installation examples:
+- python3 --version
+- curl -fsSL https://ollama.com/install.sh | sh
+- ollama pull llama3.2
+- pip install chromadb sentence-transformers ollama pypdf rank-bm25
+
+Virtual environment example:
+- python3 -m venv venv
+- source venv/bin/activate
+
+Key idea:
+RAG is a practical way to connect language models to real knowledge sources with better grounding and more reliable answers.

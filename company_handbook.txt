@@ -1,0 +1,53 @@
+COMPANY HANDBOOK — TECHCORP 2024
+
+ONBOARDING
+New employees must complete onboarding within the first 3 days of joining.
+Onboarding includes HR documentation, IT setup, security training, and team introduction.
+Each new hire is assigned a buddy from their team for the first month.
+All new hires receive a $500 equipment allowance for home office setup.
+
+REMOTE WORK POLICY
+Employees may work remotely up to 3 days per week with manager approval.
+Remote work requests must be submitted via the HR portal every Monday.
+Employees working remotely must be available during core hours of 10am to 3pm.
+A stable internet connection of at least 50Mbps is required for remote work.
+
+VACATION AND LEAVE
+Employees are entitled to 20 days of paid vacation per calendar year.
+Vacation requests must be submitted at least 2 weeks in advance via HR portal.
+Unused vacation days can be carried over up to a maximum of 5 days per year.
+Sick leave is separate from vacation and allows up to 10 days per year.
+Parental leave is 16 weeks fully paid for primary caregivers.
+
+PERFORMANCE REVIEWS
+Performance reviews are conducted twice a year in June and December.
+Each review includes a self assessment and a manager evaluation.
+Employees scoring above expectations receive a bonus of up to 15% of salary.
+Performance improvement plans are initiated for employees below expectations.
+
+ENGINEERING TOOLS AND PRACTICES
+The engineering team uses GitHub for version control and Jira for task tracking.
+All code must be reviewed by at least one senior engineer before merging.
+The team follows two week sprint cycles with planning on Mondays.
+Python and JavaScript are the primary programming languages used by the team.
+All services must include unit tests with minimum 80% code coverage.
+
+COMPENSATION AND BENEFITS
+The company provides health insurance covering medical, dental and vision.
+A 401k plan is available with company matching up to 5% of salary.
+Employees receive a $1000 annual learning and development budget.
+The company provides a monthly transport allowance of $150.
+Staff are eligible for stock options after completing one year of employment.
+
+IT AND SECURITY
+The IT department handles all software installation requests within 24 hours.
+All employees must complete security training within the first week of joining.
+Passwords must be at least 12 characters and changed every 90 days.
+Any security incidents must be reported immediately to security@techcorp.com.
+All company data must be stored on approved cloud platforms only.
+
+WORKPLACE HEALTH AND SAFETY
+Staff members must report any workplace injuries immediately to their supervisor.
+The office has a designated first aid officer on each floor.
+Emergency evacuation drills are conducted every 6 months.
+Ergonomic assessments are available for all employees upon request.

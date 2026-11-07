@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-mlops-learning"
+version = "0.1.0"
+description = "Hands-on RAG learning project with embeddings, retrieval, reranking, and evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Copilot" }]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
